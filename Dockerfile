@@ -5,7 +5,9 @@ FROM centos:7
 MAINTAINER plussell dev team <devteam@plussell.org>
 
 # Install packages necessary to run EAP
-RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
+RUN yum -y upgrade && \
+    yum -y install xmlstarlet saxon augeas bsdtar unzip && \
+    yum clean all
 
 # Create a user and group used to launch processes
 RUN useradd -r -b /opt -m -s /usr/sbin/nologin -c "Liferay user" liferay
