@@ -8,7 +8,7 @@ MAINTAINER plussell dev team <devteam@plussell.org>
 RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
 
 # Create a user and group used to launch processes
-RUN useradd -b /opt -m liferay
+RUN useradd -b /opt -m -s /usr/sbin/nologin -c "Liferay user" liferay
 
 # Set working directory to liferay's home directory
 WORKDIR /opt/liferay
