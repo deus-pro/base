@@ -5,7 +5,8 @@ FROM centos:7
 MAINTAINER plussell dev team <devteam@plussell.org>
 
 # Install packages necessary to run EAP
-RUN yum -y upgrade && \
+RUN yum install -y epel-release && \
+    yum -y upgrade && \
     yum -y install xmlstarlet saxon augeas bsdtar unzip && \
     yum clean all
 
