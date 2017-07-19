@@ -11,7 +11,7 @@ RUN yum install -y epel-release && \
     yum clean all
 
 # Create a user and group used to launch processes
-RUN useradd -r -b /opt -m -s /usr/sbin/nologin -c "Liferay user" liferay
+RUN useradd -r -b /opt -m -s /usr/sbin/nologin -c "Jboss user" jboss
 
 # Set working directory to liferay's home directory
-WORKDIR /opt/liferay
+WORKDIR /opt/jboss
